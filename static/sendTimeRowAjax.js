@@ -9,13 +9,15 @@ function SendTimeRow(){
         var ch = ValueFromRowField.charAt(i);
         if(ch != " "){
             number = number + ch;
-        } else{
+        } else {
             array[count] = number;
             count++;
             var number = "";
         }
     }
-    array[count] = number;
+    if(number != " "){
+        array[count] = number;
+    }
     console.log(array);
 
     //$.ajax({
