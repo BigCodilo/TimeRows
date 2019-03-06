@@ -11,7 +11,7 @@ func main() {
 	r := mux.NewRouter()
 
 	r.HandleFunc("/average", handlers.AverageHandlerGet).Methods("GET")
-	r.HandleFunc("/averagePOST", handlers.AverageHandlerPost).Methods("POST")
+	r.HandleFunc("/average", handlers.AverageHandlerPost).Methods("POST")
 
 	r.PathPrefix("/static/").Handler(http.FileServer(http.Dir("./")))
 	http.Handle("/", r)
