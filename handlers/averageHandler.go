@@ -1,6 +1,7 @@
 package handlers
 
 import (
+	"fmt"
 	"html/template"
 	"net/http"
 )
@@ -14,4 +15,5 @@ func AverageHandlerGet(w http.ResponseWriter, r *http.Request) {
 //AverageHandlerPost - take a time row from client
 func AverageHandlerPost(w http.ResponseWriter, r *http.Request) {
 	gettingTimeRow := r.FormValue("sendedData")
+	fmt.Println(gettingTimeRow)
 }
