@@ -15,8 +15,9 @@ function SendTimeRow(){
             var number = "";
         }
     }
-    number = number + ch;
-    console.log(array)
+    count++;
+    array[count] = number;
+    console.log(array);
 
     //$.ajax({
     //   url: "http://localhost:80/average",
