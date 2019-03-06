@@ -22,11 +22,11 @@ function SendTimeRow(){
     } 
     $('.timeRowField').val("");
   
-    var obj = new Object();
-    obj.array = array;
-    obj.len = array.length;
+    var objectMessage = new Object();
+    objectMessage.timeRow = array;
+    objectMessage.timeRowLength = array.length;
 
-    var jsonArray = JSON.stringify(obj);
+    var jsonArray = JSON.stringify(objectMessage);
     console.log(jsonArray);
 
     $.ajax({
