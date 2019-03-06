@@ -12,7 +12,7 @@ func main() {
 
 	r.HandleFunc("/average", handlers.AverageHandlerGet).Methods("GET")
 
-	r.PathPrefix("/static/").Handler(http.FileServer(http.Dir("./static/")))
+	r.PathPrefix("/static/").Handler(http.FileServer(http.Dir("./")))
 	http.Handle("/", r)
 	http.ListenAndServe(":80", nil)
 }
