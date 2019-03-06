@@ -2,12 +2,13 @@
 <!DOCTYPE html>
 <html>
     <head>
-
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+        <script src="sendTimeRowAjax.js"></script>
     </head>
     <body>
-        <form>
-            <input type="text">
-            <button type="submit">Отправить</button>
+        <form onsubmit="return SendTimeRow();">
+            <input type="text" id="time-row-field">
+            <button type="submit" onclick="drawShelves(); return false;">Отправить</button>
         </form>
     </body>
 </html>
