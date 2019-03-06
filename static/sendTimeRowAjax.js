@@ -15,7 +15,6 @@ function SendTimeRow(){
             var number = "";
         }
     }
-    count++;
     array[count] = number;
     console.log(array);
 
