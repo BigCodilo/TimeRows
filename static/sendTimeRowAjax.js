@@ -20,8 +20,8 @@ function SendTimeRow(){
     if(number != ""){
         array[count] = number;
     } 
-    $('.timeRowField').val("")
-    var jsonArray = JSON.parse(array)
+    $('.timeRowField').val("");
+    var jsonArray = JSON.parse(array);
     console.log(jsonArray);
 
     //$.ajax({
