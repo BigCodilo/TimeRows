@@ -1,7 +1,7 @@
 function SendTimeRow(){
     var ValueFromRowField = $('.timeRowField').val();
 
-    var sendMessage = new object;
+    var sendMessage = new object();
     sendMessage.array = [];
     var count = 0;
     var number = "";
