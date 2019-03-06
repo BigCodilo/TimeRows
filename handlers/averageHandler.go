@@ -20,7 +20,7 @@ func AverageHandlerPost(w http.ResponseWriter, r *http.Request) {
 	fmt.Println(gettingTimeRow)
 	type ObjectMessage struct {
 		TimeRow       []string
-		TimeRowLength string
+		TimeRowLength int
 	}
 
 	oneMessage := ObjectMessage{}
