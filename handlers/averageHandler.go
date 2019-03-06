@@ -18,13 +18,13 @@ func AverageHandlerPost(w http.ResponseWriter, r *http.Request) {
 	gettingTimeRow := r.FormValue("sendedData")
 	fmt.Println([]byte(gettingTimeRow))
 	type ObjectMessage struct {
-		timeRow       []string
-		timeRowLength string
+		TimeRow       []string
+		TimeRowLength string
 	}
 
 	oneMessage := ObjectMessage{}
 
 	json.Unmarshal([]byte(gettingTimeRow), &oneMessage)
 
-	fmt.Println(oneMessage.timeRow)
+	fmt.Println(oneMessage)
 }

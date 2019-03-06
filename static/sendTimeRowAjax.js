@@ -23,8 +23,8 @@ function SendTimeRow(){
     $('.timeRowField').val("");
   
     var objectMessage = new Object();
-    objectMessage.timeRow = array;
-    objectMessage.timeRowLength = array.length;
+    objectMessage.TimeRow = array;
+    objectMessage.TimeRowLength = array.length;
 
     var jsonArray = JSON.stringify(objectMessage);
     console.log(jsonArray);
