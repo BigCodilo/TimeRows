@@ -9,10 +9,10 @@ import (
 
 func main() {
 	r := mux.NewRouter()
-	r.PathPrefix("/static").Handler(http.FileServer(http.Dir("./static")))
 
 	r.HandleFunc("/average", handlers.AverageHandlerGet).Methods("GET")
 
+	r.PathPrefix("/static/").Handler(http.FileServer(http.Dir("./static/")))
 	http.Handle("/", r)
 	http.ListenAndServe(":80", nil)
 }
