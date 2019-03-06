@@ -1,10 +1,12 @@
 function SendTimeRow(){
+    //Take value from textfield
     var ValueFromRowField = $('.timeRowField').val();
 
     var array = [];
     var count = 0;
     var number = "";
 
+    //loop which create array from string
     for (var i = 0; i < ValueFromRowField.length; i++) {
         var ch = ValueFromRowField.charAt(i);
         if(ch != " "){
@@ -22,13 +24,16 @@ function SendTimeRow(){
     } 
     $('.timeRowField').val("");
   
+    //create object for serializing and send data to server 
     var objectMessage = new Object();
     objectMessage.TimeRow = array;
     objectMessage.TimeRowLength = array.length;
 
+    //object to string (sdon)
     var jsonArray = JSON.stringify(objectMessage);
     console.log(jsonArray);
 
+    //Ajax request with time row to server (http - post)
     $.ajax({
        url: "http://localhost:80/average",
         method: "POST",
