@@ -33,5 +33,15 @@ func AverageHandlerPost(w http.ResponseWriter, r *http.Request) {
 	for i := 0; i < len(timeRowNumbers); i++ {
 		timeRowNumbers[i], _ = strconv.ParseFloat(oneMessage.TimeRow[i], 64)
 	}
-	fmt.Println(timeRowNumbers)
+
+	fmt.Println(timeRowNumbers, GetMiddleValue(timeRowNumbers))
+}
+
+func GetMiddleValue(array []float64) float64 {
+	var number float64
+	for _, v := range array {
+		number += v
+	}
+	number /= float64(len(array))
+	return number
 }
