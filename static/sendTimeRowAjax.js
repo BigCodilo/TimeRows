@@ -21,7 +21,8 @@ function SendTimeRow(){
         array[count] = number;
     } 
     $('.timeRowField').val("")
-    console.log(array);
+    var jsonArray = JSON.parse(array)
+    console.log(jsonArray);
 
     //$.ajax({
     //   url: "http://localhost:80/average",
