@@ -1,7 +1,8 @@
 function SendTimeRow(){
     var ValueFromRowField = $('.timeRowField').val();
 
-    var array = [];
+    var obj = new object
+    obj.array = [];
     var count = 0;
     var number = "";
 
@@ -11,17 +12,18 @@ function SendTimeRow(){
             number = number + ch;
         } else {
             if(number != ""){
-                array[count] = number;
+                obj.array[count] = number;
                 count++;
                 var number = "";
             }
         }
     }
     if(number != ""){
-        array[count] = number;
+        obj.array[count] = number;
     } 
     $('.timeRowField').val("");
-    var jsonArray = JSON.parse(array);
+  
+    var jsonArray = JSON.parse(obj.array);
     console.log(jsonArray);
 
     //$.ajax({
