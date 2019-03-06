@@ -1,5 +1,10 @@
 function SendTimeRow(){
     var ValueFromRowField = $("#time-row-field").val();
-    console.log(ValueFromRowField);
+    //var array = [];
+
+    for (var i = 0; i < ValueFromRowField.length; i++) {
+        console.console.log(ValueFromRowField.charAt(i));
+    }
+
     return false
 }
