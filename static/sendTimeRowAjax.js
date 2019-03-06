@@ -1,9 +1,9 @@
 function SendTimeRow(){
     var ValueFromRowField = $('.timeRowField').val();
 
-    for (var i = 0; i < ValueFromRowField.length; i++) {
-        console.console.log(ValueFromRowField.charAt(i));
-    }
+    //for (var i = 0; i < ValueFromRowField.length; i++) {
+    //    console.console.log(ValueFromRowField.charAt(i));
+    //}
 
     //$.ajax({
     //   url: "http://localhost:80/average",
