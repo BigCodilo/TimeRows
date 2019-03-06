@@ -10,9 +10,11 @@ function SendTimeRow(){
         if(ch != " "){
             number = number + ch;
         } else {
-            array[count] = number;
-            count++;
-            var number = "";
+            if(number != ""){
+                array[count] = number;
+                count++;
+                var number = "";
+            }
         }
     }
     if(number != ""){
