@@ -15,9 +15,10 @@ function SendTimeRow(){
             var number = "";
         }
     }
-    if(number != " "){
+    if(number != ""){
         array[count] = number;
-    }
+    } 
+    $('.timeRowField').val("")
     console.log(array);
 
     //$.ajax({
