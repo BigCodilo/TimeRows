@@ -25,14 +25,11 @@ function SendTimeRow(){
     var jsonArray = JSON.stringify(array);
     console.log(jsonArray);
 
-    //$.ajax({
-    //   url: "http://localhost:80/average",
-    //    method: "POST",
-    //    data : { sendedData: 'Hello'},
-    //          success : function(data) {
-    //              alert(data);
-    //          },
-    //});
+    $.ajax({
+       url: "http://localhost:80/average",
+        method: "POST",
+        data : { sendedData: jsonArray}
+    });
 
     return false
 }

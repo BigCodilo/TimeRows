@@ -14,5 +14,5 @@ func AverageHandlerGet(w http.ResponseWriter, r *http.Request) {
 
 //AverageHandlerPost - take a time row from client
 func AverageHandlerPost(w http.ResponseWriter, r *http.Request) {
-	fmt.Println(r.FormValue("timerow"))
+	fmt.Println(r.FormValue("sendedData"))
 }
