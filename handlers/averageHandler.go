@@ -28,7 +28,7 @@ func AverageHandlerPost(w http.ResponseWriter, r *http.Request) {
 	err := json.Unmarshal([]byte(gettingTimeRow), &oneMessage)
 
 	if err != nil {
-		log.Fatal(err)
+		log.Println(err)
 	}
 
 	fmt.Println(oneMessage)
