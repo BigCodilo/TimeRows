@@ -15,6 +15,7 @@ function SendTimeRow(){
             var number = "";
         }
     }
+    number = number + ch;
     console.log(array)
 
     //$.ajax({
