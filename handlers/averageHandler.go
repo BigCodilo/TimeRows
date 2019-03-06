@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"html/template"
+	"log"
 	"net/http"
 )
 
@@ -16,7 +17,7 @@ func AverageHandlerGet(w http.ResponseWriter, r *http.Request) {
 //AverageHandlerPost - take a time row from client
 func AverageHandlerPost(w http.ResponseWriter, r *http.Request) {
 	gettingTimeRow := r.FormValue("sendedData")
-	fmt.Println([]byte(gettingTimeRow))
+	fmt.Println(gettingTimeRow)
 	type ObjectMessage struct {
 		TimeRow       []string
 		TimeRowLength string
@@ -24,7 +25,11 @@ func AverageHandlerPost(w http.ResponseWriter, r *http.Request) {
 
 	oneMessage := ObjectMessage{}
 
-	json.Unmarshal([]byte(gettingTimeRow), &oneMessage)
+	err := json.Unmarshal([]byte(gettingTimeRow), &oneMessage)
+
+	if err != nil {
+		log.Fatal(err)
+	}
 
 	fmt.Println(oneMessage)
 }
