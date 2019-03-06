@@ -1,9 +1,21 @@
 function SendTimeRow(){
     var ValueFromRowField = $('.timeRowField').val();
 
+    var array = [];
+    var count = 0;
+    var number = "";
+
     for (var i = 0; i < ValueFromRowField.length; i++) {
-        console.log(ValueFromRowField.charAt(i));
+        var ch = ValueFromRowField.charAt(i);
+        if(ch != " "){
+            number = number + ch;
+        } else{
+            array[count] = number;
+            count++;
+            var number = "";
+        }
     }
+    console.log(array)
 
     //$.ajax({
     //   url: "http://localhost:80/average",
