@@ -46,9 +46,18 @@ func AverageHandlerPost(w http.ResponseWriter, r *http.Request) {
 	fmt.Println("Your time row:", timeRowNumbers)
 	fmt.Println("Middle value of your time row:", middleValue)
 
-	middleValueJSON, _ := json.Marshal(middleValue)
+	type ObjectMessageToSend struct {
+		TimeRow     []float64
+		MiddleValue float64
+	}
+	oneMessageToSend := ObjectMessageToSend{
+		timeRowNumbers,
+		middleValue,
+	}
 
-	w.Write(middleValueJSON)
+	middleValueAndTimeRowJSON, _ := json.Marshal(oneMessageToSend)
+
+	w.Write(middleValueAndTimeRowJSON)
 }
 
 //GetMiddleValue - return a middle value from array of []float64 (context - time row)

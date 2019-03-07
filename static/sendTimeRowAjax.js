@@ -35,11 +35,12 @@ function SendTimeRow(){
 
     //Ajax request with time row to server (http - post)
     $.ajax({
-       url: "http://localhost:80/average",
+        url: "http://localhost:80/average",
         method: "POST",
         data : { sendedData: jsonArray},
         success : function(data){
-            $('form').after('<span>Среднее значение: ' + data + '</span>');
+            var messageFromServer = JSON.parse(data)
+            $('form').after('<p>Временной ряд: ' + messageFromServer.data.TimeRow +'; Среднее значение: ' + messageFromServer.data.MiddleValue + ';</p>');
         }
     });
 
