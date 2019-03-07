@@ -42,7 +42,7 @@ function SendTimeRow(){
             var messageFromServer = JSON.parse(data)
             console.log(data)
             console.log(messageFromServer)
-            //$('form').after('<p>Временной ряд: ' + messageFromServer.data.TimeRow +'; Среднее значение: ' + messageFromServer.data.MiddleValue + ';</p>');
+            $('form').after('<p>Временной ряд: ' + messageFromServer.TimeRow +'; Среднее значение: ' + messageFromServer.MiddleValue + ';</p>');
         }
     });
 
