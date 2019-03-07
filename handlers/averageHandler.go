@@ -26,7 +26,7 @@ func AverageHandlerPost(w http.ResponseWriter, r *http.Request) {
 	}
 	//Create an object of struct
 	oneMessage := ObjectMessage{}
-	//Unmarshaling json string in object. return error if is there something wrong
+	//Unmarshaling json string to object. return error if there is something wrong
 	//Return <nil> if all ok
 	err := json.Unmarshal([]byte(gettingTimeRow), &oneMessage)
 
@@ -41,9 +41,14 @@ func AverageHandlerPost(w http.ResponseWriter, r *http.Request) {
 	for i := 0; i < len(timeRowNumbers); i++ {
 		timeRowNumbers[i], _ = strconv.ParseFloat(oneMessage.TimeRow[i], 64)
 	}
+	middleValue := GetMiddleValue(timeRowNumbers)
 	//Console output
 	fmt.Println("Your time row:", timeRowNumbers)
-	fmt.Println("Middle value of your time row:", GetMiddleValue(timeRowNumbers))
+	fmt.Println("Middle value of your time row:", middleValue)
+
+	middleValueJSON, _ := json.Marshal(middleValue)
+
+	w.Write(middleValueJSON)
 }
 
 //GetMiddleValue - return a middle value from array of []float64 (context - time row)

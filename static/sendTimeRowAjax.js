@@ -37,7 +37,10 @@ function SendTimeRow(){
     $.ajax({
        url: "http://localhost:80/average",
         method: "POST",
-        data : { sendedData: jsonArray}
+        data : { sendedData: jsonArray},
+        success : function(data){
+            $('form').after('<span>Среднее значение: ' + data + '</span>');
+        }
     });
 
     return false
