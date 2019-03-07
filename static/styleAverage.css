@@ -30,7 +30,7 @@ form button{
     width: 200px;
     height: 62px;
     background-color: rgb(51, 51, 51);
-    border: none;
+    border: 2px solid black;
     color: white;
     font-size: 2em;
     border-top-right-radius: 20px;
