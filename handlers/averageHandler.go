@@ -36,7 +36,7 @@ func MiddleSliceHandler(w http.ResponseWriter, r *http.Request) {
 		log.Println(err)
 	}
 
-	w.Write(middleValueAndTimeRowJSON)
+	//w.Write(middleValueAndTimeRowJSON)
 }
 
 //GetMiddleValue - return a middle value from array of []float64 (context - time row)
