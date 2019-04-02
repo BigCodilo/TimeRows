@@ -36,6 +36,8 @@ func MiddleSliceHandler(w http.ResponseWriter, r *http.Request) {
 		log.Println(err)
 	}
 
+	a := controllers.MiddleSlice()
+
 	//w.Write(middleValueAndTimeRowJSON)
 }
 
