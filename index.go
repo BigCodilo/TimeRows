@@ -21,7 +21,7 @@ func main() {
 
 	//Add handler (POST) which take json (time row with it's length) from client,
 	//and make a float64 array (slice) flor string array.
-	r.HandleFunc("/average", handlers.AverageHandlerPost).Methods("POST")
+	r.HandleFunc("/middleSlice", handlers.MiddleSliceHandler).Methods("POST")
 
 	//Send static files to client (css, js etc)
 	r.PathPrefix("/static/").Handler(http.FileServer(http.Dir("./")))
